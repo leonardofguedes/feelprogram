@@ -1,7 +1,9 @@
 """
 O FEEL é um app/site que permite você reagir a coisas de seu dia.
-Por exemplo, você é fã de um time de futebol e em um Domingo qualquer, assiste uma partida que seu time perde de goleada.
-Você reage no FEEL, dizendo como está se sentindo em relação ao time naquele instante. O FEEL responderá depois como está sua relação com o time.
+Por exemplo, você é fã de um time de futebol e em um Domingo qualquer,
+você assiste uma partida que seu time perde de goleada.
+Você reage no FEEL, dizendo como está se sentindo em relação ao time naquele instante.
+O FEEL responderá depois como está sua relação com o time.
 """
 
 class Feel:
@@ -10,7 +12,7 @@ class Feel:
         self.sentimento = 50
 
 
-    def react(self,react):
+    def react(self,react=str):
         if react == 'Bem':
             self.sentimento += 12
         if react == 'Muito bem':
@@ -23,14 +25,18 @@ class Feel:
             if react == 'Péssimo':
                 self.sentimento -= 20
 
-
     def show(self):
-        if self.sentimento >= 65:
+        if self.sentimento >= 90:  # [90, ]
+            return 'Isso é um caso de AMOR!'
+        if self.sentimento >= 65:  # [65, 89]
             return 'Adorando'
-        if self.sentimento >= 50:
+        if self.sentimento >= 50:  # [50, 64]
             return 'Curtindo'
-        if self.sentimento <= 30:
-            return 'Odiando'
-        else:
+        if self.sentimento > 30:  # [31, 49]
             return 'Relação conturbada'
-        
+        else:  # [ , 30]
+            return 'Odiando'
+
+
+    def __str__(self) -> str:
+        return self.nome
