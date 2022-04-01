@@ -1,4 +1,10 @@
 """
+FEEL is an app/site that allows you to react to things in your day.
+For example, you are a fan of a football team and on any given Sunday,
+you watch a match that your team loses by rout.
+You react in FEEL, saying how you are feeling about the team at that moment.
+FEEL will respond later on how is your relationship with the team.
+
 O FEEL é um app/site que permite você reagir a coisas de seu dia.
 Por exemplo, você é fã de um time de futebol e em um Domingo qualquer,
 você assiste uma partida que seu time perde de goleada.
@@ -25,6 +31,7 @@ class Feel:
             if react == 'Péssimo':
                 self.sentimento -= 20
 
+
     def show(self):
         if self.sentimento >= 90:  # [90, ]
             return 'Isso é um caso de AMOR!'
@@ -40,3 +47,4 @@ class Feel:
 
     def __str__(self) -> str:
         return self.nome
+
