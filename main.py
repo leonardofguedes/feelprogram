@@ -1,4 +1,4 @@
-from main import Feel
+from feel import Feel
 from time import sleep
 
 reacts = ['Péssimo', 'Mal', 'Neutro', 'Bem', 'Muito bem'] #reacts permitidas no programa
@@ -67,4 +67,3 @@ def tela():
             else:
                 assuntos = [f'{a}' for a in lista_assuntos]
                 print(f'Suas reações são sobre os seguintes assuntos:\n{assuntos}')
-
